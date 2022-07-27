@@ -26,10 +26,10 @@
           <p>{{ .about | markdownify | emojify }}</p> 
         </li>
         <li style="display: inline-block; font-size: 0.75rem;">
-        <i class="fa-solid fa-calendar"></i>  when: {{ .when | markdownify }}</p>    
+        <i class="fa-solid fa-calendar"></i> {{ .when | markdownify }}</p>    
         </li>
         <li style="display: inline-block; font-size: 0.75rem;">
-        <i class="fa-solid fa-globe"></i> teaching language: {{ .lang | markdownify }}
+        <i class="fa-solid fa-globe"></i> {{ .lang | markdownify }}
         </li>
         <li style="display: inline-block; font-size: 0.75rem;">   
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
