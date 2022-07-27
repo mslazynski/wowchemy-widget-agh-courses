@@ -1,6 +1,52 @@
-{{ $page := .root }}
-{{ $section := .page }}
+{{ $ := .root }}
+{{ $page := .page }}
 
-<h2>{{$section.Title}}</h2>
-
-<p>{{$section.Content}}</p>
+<!-- agh-courses widget -->
+<div class="row">
+  <div class="col-12">
+      <div class="section-subheading">{{ Courses: | markdownify }}</div>
+        {{ range $page.Params.courses }}
+        {{ $pack := or .icon_pack "fas" }}
+        {{ $pack_prefix := $pack }}
+        {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+          {{ $pack_prefix = "fa" }}
+        {{ end }}
+        {{ $link := .link }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+          {{ $link = .link | relLangURL }}
+        {{ else if in (slice "http" "https") $scheme }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <details class="spoiler " id="spoiler-0" open="">
+        <summary>::marker {{ .name | markdownify}}</summary>
+        <div class="description">
+           <p>{{ .name | markdownify | emojify }}</p>
+        </div>  
+        <ul class="ul-social fa-ul">
+        <li>
+          <i class="fa-solid fa-calendar"></i> 
+          <div class="description">
+            <p>when: {{ .when | markdownify }}</p>
+          </div>     
+        </li>
+        <li>
+          <i class="fa-solid fa-globe"></i>
+          <div class="description">
+            <p>lang: {{ .lang | markdownify }} </p>
+          </div>    
+        </li>
+        <li>
+          <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
+          <i class="fa-solid fa-file-pdf"></i>
+          <div class="description">
+            <p>donwload syllabus </p>
+          </div> 
+          </a>
+        </li>
+        </ul>
+        </details>
+        {{ end }}
+  </div>
+</div>
