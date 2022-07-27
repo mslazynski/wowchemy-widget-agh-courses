@@ -22,16 +22,16 @@
         <details class="spoiler " id="spoiler-0" open="">
         <summary>{{ .name | markdownify}}</summary>
         <ul class="ul-social fa-ul">
-        <li>
+        <li style="font-size: 0.9rem;">
           <p>{{ .about | markdownify | emojify }}</p> 
         </li>
-        <li style="display: inline-block;">
+        <li style="display: inline-block; font-size: 0.75rem;">
         <i class="fa-solid fa-calendar"></i>  when: {{ .when | markdownify }}</p>    
         </li>
-        <li style="display: inline-block;">
+        <li style="display: inline-block; font-size: 0.75rem;">
         <i class="fa-solid fa-globe"></i> teaching language: {{ .lang | markdownify }}
         </li>
-        <li style="display: inline-block;">   
+        <li style="display: inline-block; font-size: 0.75rem;">   
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
           <i class="fa-solid fa-file-pdf"></i> download syllabus
           </a>
