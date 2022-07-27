@@ -26,14 +26,14 @@
           <p>{{ .about | markdownify | emojify }}</p> 
         </li>
         <li>
-        📅 when: {{ .when | markdownify }}</p>    
+        — when: {{ .when | markdownify }}</p>    
         </li>
         <li>
-        🌐 teaching language: {{ .lang | markdownify }}
+        — teaching language: {{ .lang | markdownify }}
         </li>
         <li>
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
-          📄 download syllabus
+          — download syllabus
           </a>
         </li>
         </ul>
