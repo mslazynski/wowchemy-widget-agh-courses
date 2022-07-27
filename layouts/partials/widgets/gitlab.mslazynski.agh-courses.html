@@ -4,7 +4,7 @@
 <!-- agh-courses widget -->
 <div class="row">
   <div class="col-12">
-      <div class="section-subheading">{{ Courses: | markdownify }}</div>
+      <div class="section-subheading">Courses</div>
         {{ range $page.Params.courses }}
         {{ $pack := or .icon_pack "fas" }}
         {{ $pack_prefix := $pack }}
