@@ -25,13 +25,13 @@
         <li>
           <p>{{ .about | markdownify | emojify }}</p> 
         </li>
-        <li>
+        <li style="display: inline-block;">
         <i class="fa-solid fa-calendar"></i>  when: {{ .when | markdownify }}</p>    
         </li>
-        <li>
+        <li style="display: inline-block;">
         <i class="fa-solid fa-globe"></i> teaching language: {{ .lang | markdownify }}
         </li>
-        <li>   
+        <li style="display: inline-block;">   
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
           <i class="fa-solid fa-file-pdf"></i> download syllabus
           </a>
