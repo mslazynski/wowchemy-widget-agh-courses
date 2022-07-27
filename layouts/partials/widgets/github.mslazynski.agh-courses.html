@@ -23,19 +23,13 @@
         <summary>{{ .name | markdownify}}</summary>
         <ul class="ul-social fa-ul">
         <li>
-          <div class="description">
-           <p>{{ .name | markdownify | emojify }}</p>
-          </div>  
+          <p>{{ .about | markdownify | emojify }}</p> 
         </li>
         <li>
-          <i class="fa-solid fa-calendar"></i> 
-          <div class="description">
-            <p>when: {{ .when | markdownify }}</p>
-          </div>     
+          <i class="fa-solid fa-calendar"></i> when: {{ .when | markdownify }}</p>    
         </li>
         <li>
-          <i class="fa-solid fa-globe"></i>
-            <p>teaching language: {{ .lang | markdownify }} </p>
+          <i class="fa-solid fa-globe"></i> teaching language: {{ .lang | markdownify }}
         </li>
         <li>
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
