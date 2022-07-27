@@ -26,14 +26,14 @@
           <p>{{ .about | markdownify | emojify }}</p> 
         </li>
         <li>
-          <i class="fa-solid fa-calendar"></i> when: {{ .when | markdownify }}</p>    
+        📅 when: {{ .when | markdownify }}</p>    
         </li>
         <li>
-          <i class="fa-solid fa-globe"></i> teaching language: {{ .lang | markdownify }}
+        🌐 teaching language: {{ .lang | markdownify }}
         </li>
         <li>
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
-          <i class="fa-solid fa-file-pdf"></i> download syllabus
+          📄 download syllabus
           </a>
         </li>
         </ul>
