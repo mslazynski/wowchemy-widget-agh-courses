@@ -35,9 +35,7 @@
         </li>
         <li>
           <i class="fa-solid fa-globe"></i>
-          <div class="description">
-            <p>lang: {{ .lang | markdownify }} </p>
-          </div>    
+            <p>teaching language: {{ .lang | markdownify }} </p>
         </li>
         <li>
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
