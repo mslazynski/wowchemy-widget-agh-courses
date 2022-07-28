@@ -8,7 +8,7 @@
         {{ range $page.Params.courses }}
         {{ $link := .link }}
         {{ $link_text := or .link_text "Syllabus" }}
-        {{ $link_icon := or .link_icon "fa-solid file-pdf" }}
+        {{ $link_icon := or .link_icon "fa-solid fa-file-pdf" }}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
         {{ if not $scheme }}
