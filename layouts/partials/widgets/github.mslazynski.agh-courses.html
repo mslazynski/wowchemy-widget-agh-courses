@@ -11,6 +11,7 @@
         {{ if in (slice "fab" "fas" "far" "fal") $pack }}
           {{ $pack_prefix = "fa" }}
         {{ end }}
+        {{ if .link }}
         {{ $link := .link }}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
@@ -31,11 +32,13 @@
         <li style="display: inline-block; font-size: 0.75rem;">
         <i class="fa-solid fa-globe"></i> {{ .lang | markdownify }}
         </li>
+        {{ if .link }}
         <li style="display: inline-block; font-size: 0.75rem;">   
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
           <i class="fa-solid fa-file-pdf"></i> Syllabus
           </a>
         </li>
+        {{ end }}
         </ul>
         </details>
         {{ end }}
