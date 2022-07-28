@@ -20,7 +20,7 @@
         {{ else if in (slice "http" "https") $scheme }}
           {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
-        <details class="spoiler " id="spoiler-0" open="">
+        <details class="spoiler " id="spoiler-0">
         <summary>{{ .name | markdownify}}</summary>
         <ul class="ul-social fa-ul">
         <li style="font-size: 0.9rem;">
