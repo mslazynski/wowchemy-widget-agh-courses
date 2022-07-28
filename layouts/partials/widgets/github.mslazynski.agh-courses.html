@@ -40,6 +40,14 @@
         {{ end }}
   </div>
   <div class="col-12 col-lg-8">
-    {{ $page.Content }} 
+    <h2>{{ $page.Params.title }} </h2>
+    {{ $page.Content }}
+    <h3>{{ or (i18 "consulting") "Consulting Hours" }}</h3>
+    {{ $page.Params.consulting.text | markdownify }}
+    <p><a href="{{ $page.Params.consulting.place.link }}" target="_blank" rel="noopener">
+      <i class="fas fa-location-pin  pr-1 fa-fw"></i> {{ $page.Params.consulting.place.name | markdownify }}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <i class="fas fa-clock  pr-1 fa-fw"></i> {{ $page.Params.consulting.time | markdownify }}</p>
+    <p>{{ .Title }}</p>
+ 
   </div>
 </div>
