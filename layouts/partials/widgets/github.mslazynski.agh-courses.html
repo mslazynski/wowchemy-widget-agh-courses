@@ -6,12 +6,14 @@
   <div class="col-12 col-lg-4">
       <div class="section-subheading">Courses</div>
         {{ range $page.Params.courses }}
-        {{ $pack := or .icon_pack "fas" }}
+        {{ $pack := or .link_icon_pack "fas" }}
         {{ $pack_prefix := $pack }}
         {{ if in (slice "fab" "fas" "far" "fal") $pack }}
           {{ $pack_prefix = "fa" }}
         {{ end }}
         {{ $link := .link }}
+        {{ $link_name := or .link_name "Syllabus" }}
+        {{ $link_icon := or .link_icon "file-pdf" }}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
         {{ if not $scheme }}
@@ -33,8 +35,8 @@
         </li>
         {{ if .link }}
         <li style="display: inline-block; font-size: 0.75rem;">   
-          <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
-          <i class="fa-solid fa-file-pdf"></i> Syllabus
+          <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ $link_icon }}">
+          <i class="fa-li {{ $pack }} {{ $pack_prefix }}-{{ $link_icon }}"></i> {{ $link_name }}
           </a>
         </li>
         {{ end }}
