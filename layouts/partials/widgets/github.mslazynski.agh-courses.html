@@ -3,7 +3,7 @@
 
 <!-- agh-courses widget -->
 <div class="row">
-  <div class="col-12 col-lg-8">
+  <div class="col-lg-8">
     <h2>{{ $page.Params.title }} </h2>
     {{ $page.Content }}
     <h3>{{ or (i18n "consulting") "Consulting Hours" }}</h3>
@@ -15,7 +15,7 @@
       <i class="fas fa-clock  pr-1 fa-fw"></i> {{ $page.Params.consulting.time | markdownify }}</p>
     </div>
   </div>
-  <div class="col-12 col-lg-4">
+  <div class="col-lg-4">
       <div class="section-subheading">{{ or (i18n "courses") "Courses" }}</div>
         {{ range $page.Params.courses }}
         {{ $link := .link }}
