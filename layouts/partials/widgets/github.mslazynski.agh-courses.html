@@ -45,9 +45,10 @@
     <h3>{{ or (i18n "consulting") "Consulting Hours" }}</h3>
     {{ $page.Params.consulting.text | markdownify }}
     <br><br>
-    <p align="right"><a href="{{ $page.Params.consulting.place.link }}" target="_blank" rel="noopener">
+    <div class="description">
+    <p align="center"><a href="{{ $page.Params.consulting.place.link }}" target="_blank" rel="noopener">
       <i class="fas fa-location-pin  pr-1 fa-fw"></i> {{ $page.Params.consulting.place.name | markdownify }}</a>&nbsp;&nbsp;&nbsp;&nbsp;
       <i class="fas fa-clock  pr-1 fa-fw"></i> {{ $page.Params.consulting.time | markdownify }}</p>
- 
+    </div>
   </div>
 </div>
