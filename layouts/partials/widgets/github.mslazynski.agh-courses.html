@@ -7,7 +7,7 @@
       <div class="section-subheading">{{ or (i18n "courses") "Courses" }}</div>
         {{ range $page.Params.courses }}
         {{ $link := .link }}
-        {{ $link_text := or .link_text (i18n "more_info" }}
+        {{ $link_text := or .link_text (i18n "more_info") }}
         {{ $link_icon := or .link_icon "fa-solid fa-file-pdf" }}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
