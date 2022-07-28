@@ -4,7 +4,7 @@
 <!-- agh-courses widget -->
 <div class="row">
   <div class="col-12 col-lg-4">
-      <div class="section-subheading">Courses</div>
+      <div class="section-subheading">{{ i18n "courses" or "Courses" }}</div>
         {{ range $page.Params.courses }}
         {{ $link := .link }}
         {{ $link_text := or .link_text "Syllabus" }}
